@@ -1,0 +1,267 @@
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #757575;
+  --border-color: #dbdbdb;
+  --primary-color: #fd3014;
+  --background-color: #f1f0f1;
+  --btn-text-color: #505050;
+  --background-title-color: #d7202c;
+  --header-height: 80px;
+  --header-nav-height: 76px;
+  --under-header-navbar-height: 54px;
+  --peak-banner: 50px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+.bold {
+  font-weight: 400 !important;
+}
+
+.noHover {
+  pointer-events: none;
+}
+
+.phone-mobile-color {
+  color: #a94442 !important;
+}
+
+.open {
+  display: block !important;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  animation: slideDown forwards 1s;
+}
+
+.slideUp {
+  animation: slideDown forwards 1s;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0.7;
+    top: -130px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    top: 0;
+  }
+  to {
+    opacity: 0.7;
+    top: -130px;
+  }
+}
+
+/* Red title */
+.red-title-wrap {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-title-color);
+}
+
+.red-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  position: relative;
+  top: 2px;
+  padding: 14px 20px;
+  color: var(--white-color);
+}
+
+.red-title-link {
+  margin-right: 16px;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  text-decoration: none;
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+/* Product item */
+.product__item {
+  margin-top: 24px;
+  position: relative;
+  border: 1px solid #eeeeee;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+}
+
+.product__item:hover {
+  border: 1px solid #f1df8d;
+  box-shadow: none;
+}
+
+.product__item-link {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+.product__item-info-wrap {
+  display: block;
+}
+
+.product__item-img-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.product__item-img {
+  width: 100%;
+}
+
+/* Product item more info */
+.product__item:hover .product__item-more-info {
+  display: flex;
+}
+
+.product__item-more-info {
+  position: absolute;
+  width: 100%;
+  top: 77.5%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background-color: rgba(121, 117, 101, 0.8);
+  padding: 10px 0;
+  text-decoration: none;
+  animation: slideUp ease 0.8s;
+}
+
+.product__item-cart-title {
+  font-style: italic;
+  color: var(--white-color);
+}
+
+.product__item-cart-order {
+  padding: 5px 8px;
+  margin-left: 8px;
+  background-color: #252525;
+  color: var(--white-color);
+  border: none;
+  border-radius: 3px;
+}
+
+.product__item-cart-order:hover {
+  background-color: #428bca;
+  cursor: pointer;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    top: 98%;
+  }
+  to {
+    opacity: 1;
+    top: 77.5%;
+  }
+}
+
+.product__item-name {
+  color: #333;
+  font-size: 1.4rem;
+  height: 3.2rem;
+  margin: 5px 10px 10px 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.product__item-price {
+  display: flex;
+  padding: 0 10px 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product__item-price-del {
+  display: block;
+  color: #888888;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  height: 1.9rem;
+  text-decoration: line-through;
+}
+
+.product__item-price-now-price {
+  display: block;
+  font-size: 2rem;
+  line-height: 2.7rem;
+  height: 2.7rem;
+  color: #ed0000;
+  font-weight: 600;
+}
+
+.product__price-discount {
+  position: relative;
+  width: 48px;
+  height: 58px;
+}
+
+.product__price-discount-percent {
+  position: absolute;
+  height: 86%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #180733;
+}
+
+.product__price-discount-img {
+  width: 48px;
+}
+
+/* Page Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: var(--white-color);
+  color: #428bca;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  border: 1px solid #e1e1e1;
+}
+
+.btn:hover {
+  color: black;
+  background-color: #f8e36e;
+}
+
+.btn--active {
+  background-color: #f8e36e;
+}
