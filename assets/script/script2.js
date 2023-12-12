@@ -1,34 +1,34 @@
 const account1 = {
   owner: 'Toàn Nguyen Ngoc',
   email: 'ngoc@gmail.com',
-  pin: 1111,
+  password: 1111,
 };
 
 const account2 = {
   owner: 'Vinh Vat Vo',
   email: 'vat@gmail.com',
-  pin: 2222,
+  password: 2222,
 };
 
 const account3 = {
   owner: 'Nam Nhi Nhanh',
   email: 'nam@gmail.com',
-  pin: 3333,
+  password: 3333,
 };
 
 const account4 = {
   owner: 'Tùng Nguyen Son',
   email: 'tng@gmail.com',
-  pin: 4444,
+  password: 4444,
 };
 
 const accounts = [account1, account2, account3, account4];
 
 class Account {
-  constructor(owner, email, pin) {
+  constructor(owner, email, password) {
     this.owner = owner;
     this.email = email;
-    this.pin = pin;
+    this.password = password;
   }
 }
 
@@ -41,11 +41,7 @@ const logoutImg = document.querySelector('.logout-img');
 
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
-    acc.username = acc.owner
-      .toLowerCase()
-      .split(' ')
-      .map(name => name[0])
-      .join('');
+    acc.username = acc.owner.toLowerCase();
   });
 };
 
@@ -65,7 +61,7 @@ const closeBtns = document.querySelectorAll('.close');
 
 const ownerInput = document.querySelector('#username');
 const emailInput = document.querySelector('#email');
-const pinInput = document.querySelector('#password');
+const passwordInput = document.querySelector('#password');
 const registerBtnModal = document.querySelector('.register-btn-modal');
 
 function showSidebar() {
@@ -91,15 +87,15 @@ regBtn.addEventListener('click', function (e) {
 let newAccount;
 registerBtnModal.addEventListener('click', function (e) {
   // e.preventDefault();
-  const owner = ownerInput.value;
+  const owner = ownerInput.value.replaceAll(' ', '');
   const email = emailInput.value.replaceAll(' ', '');
-  if (pinInput.value === '') return;
+  if (passwordInput.value === '') return;
 
-  pin = +pinInput.value;
+  const password = passwordInput.value.replaceAll(' ', '');
   e.preventDefault();
   regModal.classList.remove('show');
 
-  newAccount = new Account(owner, email, pin);
+  newAccount = new Account(owner, email, password);
   accounts.push(newAccount);
   createUsernames(accounts);
 });
@@ -128,7 +124,7 @@ btnLoginOnModal.addEventListener('click', e => {
   e.preventDefault();
   currentAccount = accounts.find(acc => acc.username === loginUsername.value);
   console.log(currentAccount);
-  if (currentAccount?.pin === Number(loginPassword.value)) {
+  if (currentAccount?.password === loginPassword.value) {
     logModal.classList.remove('show');
     isLoggedIn = true;
     const name = currentAccount.owner.split(' ')[0];
