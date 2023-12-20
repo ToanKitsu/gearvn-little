@@ -923,12 +923,8 @@ img.under-header__navbar-btn-icon {
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 50%;
+  width: 32%;
   position: relative;
-}
-
-.modal-content h2 {
-  margin-top: 0;
 }
 
 .modal-content label {
@@ -939,6 +935,7 @@ img.under-header__navbar-btn-icon {
 
 .modal-content h2 {
   font-size: 1.8rem;
+  margin-top: 0;
   margin-bottom: 20px;
 }
 

@@ -82,6 +82,11 @@
   .slider {
     height: 27.2rem;
   }
+
+  /* Register and Login form */
+  .modal-content {
+    width: 30%;
+  }
 }
 
 /* Tablet - PC low resolution */
