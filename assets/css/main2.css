@@ -934,6 +934,12 @@ img.under-header__navbar-btn-icon {
 .modal-content label {
   display: block;
   margin: 10px 0 5px 0;
+  font-size: 1.4rem;
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
 }
 
 .modal-content input[type="text"],
@@ -942,9 +948,10 @@ img.under-header__navbar-btn-icon {
 .modal-content input[type="submit"] {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
-  border: none;
+  margin-bottom: 16px;
+  border: 1px solid;
   border-radius: 4px;
+  font-size: 1.4rem;
 }
 
 .modal-content input[type="submit"] {
